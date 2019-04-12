@@ -3,6 +3,7 @@ package com.example.tax_ushan;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -29,8 +30,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 double income, tax;
+                if(TextUtils.isEmpty(etIncome.getText().toString())){
+                    etIncome.setError("Please input your income.");
+                    return;
+
+                }
 
                 income = Integer.parseInt(etIncome.getText().toString()) *12;
+
 
                 TaxCalculator taxCalculator= new TaxCalculator(income);
                 tax= taxCalculator.Tax();
