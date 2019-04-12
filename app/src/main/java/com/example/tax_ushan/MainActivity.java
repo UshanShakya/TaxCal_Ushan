@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     TextView tvTax;
     Button btnCalcualte;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
